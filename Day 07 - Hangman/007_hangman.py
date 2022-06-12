@@ -42,6 +42,6 @@ while "".join(display) != chosen_word and lives != 0:
     # Output the current stage and display
     print(f"{hangman_art.stages[lives]} \nWord: {''.join(display)}")
 # The loop ends and the player wins or lose the game
-print("\n" + "=" * 30)
+print("\n" + "=" * 35)
 print("You Won! Congratulations") if lives != 0 else print(f"You Lost!\nThe chosen word was {chosen_word.capitalize()}")
-print("=" * 30)
+print("=" * 35)
