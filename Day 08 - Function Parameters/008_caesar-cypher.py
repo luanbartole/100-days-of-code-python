@@ -20,10 +20,9 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
 """)
 
 
-def caesar_cypher(base_text, shift_factor, function):
+def caesar_cipher(base_text, shift_factor, function):
     encrypted_word = ""
     for letter in base_text:
-
         if function == "encode":
             if letter not in alphabet:
                 encrypted_letter = letter
@@ -48,6 +47,6 @@ while not end_program:
     direction = input("\nType 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-    caesar_cypher(text, shift, direction)
-    if input("\nWould you like to do another cypher? [Y] or [N]:\n").upper() == "N":
+    caesar_cipher(text, shift, direction)
+    if input("\nWould you like to do another cipher? [Y] or [N]:\n").upper() == "N":
         end_program = True
