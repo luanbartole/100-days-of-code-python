@@ -17,11 +17,11 @@ user_numbers = int(input(f"Numbers: "))
 password_base = []
 
 # Assign random values on the password_base list based on what the user input previously.
-for x in range(1, user_letters + 1):
+for x in range(0, user_letters):
     password_base.append(random.choice(letters))
-for x in range(1, user_symbols + 1):
+for x in range(0, user_symbols):
     password_base += random.choice(symbols)
-for x in range(1, user_numbers + 1):
+for x in range(0, user_numbers):
     password_base += random.choice(numbers)
 
 # Shuffle the items on the list changing its positions and join the list into a string.
