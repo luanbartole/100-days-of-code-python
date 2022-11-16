@@ -46,6 +46,7 @@ def guess_the_number_game(game_mode):
     if game_mode == "Hard":
         guess(5, computer_number)
 
+
 # Prints the logo of the game.
 print("-" * 90)
 print(art.logo)
