@@ -18,5 +18,5 @@ while quiz.still_has_questions():
     print()
 
 # Once the quiz is over, it shows the user the final score.
-print("\nYou've completed the quiz")
+print("\nYou've completed the quiz!")
 print(f"Your final score was: {quiz.score}/{len(question_bank)}")
