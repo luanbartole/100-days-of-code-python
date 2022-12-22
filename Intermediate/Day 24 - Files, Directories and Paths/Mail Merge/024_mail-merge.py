@@ -26,6 +26,3 @@ for name in name_list:
     # Replace the name of the list with the placeholder again
     custom_name = template_letter[0].replace(name, "[name]")
     template_letter[0] = custom_name
-
-
-
