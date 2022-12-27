@@ -42,6 +42,6 @@ class Guess(Turtle):
                 return STATES_LIST[_]
 
     def write_state(self, state_id):
-        """Write the state's acronym in it's position in the map"""
+        """Write the state's acronym in its position in the map"""
         self.goto(X_LIST[state_id], Y_LIST[state_id])
         self.write(STATES_ACR[state_id], align="center", font=("Courier", 10, "bold"))
