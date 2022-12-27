@@ -6,7 +6,7 @@ window = Tk()
 window.title("Mile to Km Converter")
 window.minsize(width=200, height=100)
 
-entry = Entry(width=10, textvariable="a")
+entry = Entry(width=10)
 entry.insert(END, string="0")
 # print(entry.get())
 entry.grid(column=1, row=0)
