@@ -6,7 +6,6 @@ from random import choice
 # Constants and Variables
 BACKGROUND_COLOR = "#B1DDC6"
 FONT = "Ariel"
-
 # First run = French Words file / Not first run = Words to Learn file
 try:
     data = pandas.read_csv("data/words_to_learn.csv")
@@ -14,7 +13,6 @@ except FileNotFoundError:
     data = pandas.read_csv("data/french_words.csv")
 finally:
     data_dict = data.to_dict(orient="records")
-
 
 current_card = {}
 
@@ -41,14 +39,16 @@ def save_progress():
     global data_dict
     data_dict.remove(current_card)
     # If the user learned all the words, it starts from 0
-    if data_dict == []:
+    if not data_dict:
         new_data = pandas.read_csv("data/french_words.csv")
         data_dict = new_data.to_dict(orient="records")
-        messagebox.showinfo(title="Congratulations", message="You learned all the 100 words! \nI'm gonna reset the list now.")
+        messagebox.showinfo(title="Congratulations",
+                            message="You learned all the 100 words! \nI'm gonna reset the list now.")
 
     df = pandas.DataFrame(data_dict)
     df.to_csv("data/words_to_learn.csv", index=False)
     next_card()
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
