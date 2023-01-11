@@ -4,6 +4,7 @@ from datetime import datetime
 
 NUTRITIONIX_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
 SHEETY_ENDPOINT = "https://api.sheety.co/b573244ba0df7b737d4e04bec7a441a6/myWorkouts/workouts"
+SHEETY_BEARER_TOKEN = os.environ.get("SHEETY_BEARER_TOKEN")
 APP_ID = os.environ.get("NUTRITIONIX_APP_ID")
 API_KEY = os.environ.get("NUTRITIONIX_API_KEY")
 today = datetime.now()
@@ -18,10 +19,12 @@ params = {
     "height_cm": 175,
     "age": 19
 }
-
+sheety_token = {
+    "Authorization": f"Bearer {SHEETY_BEARER_TOKEN}"
+}
 
 def add_row(exercise: str):
-    sup = {
+    new_row = {
         "workout": {
             "date": today.strftime("%d/%m/%Y"),
             "time": today.strftime("%H:%M:%S"),
@@ -31,8 +34,8 @@ def add_row(exercise: str):
         }
     }
 
-    requests.post(url=SHEETY_ENDPOINT, json=sup)
-
+    response = requests.post(url=SHEETY_ENDPOINT, json=new_row, headers=sheety_token)
+    print(response.status_code)
 
 # Get data about the exercises and add then into the google sheet.
 response = requests.post(url=NUTRITIONIX_ENDPOINT, headers=headers, json=params)
