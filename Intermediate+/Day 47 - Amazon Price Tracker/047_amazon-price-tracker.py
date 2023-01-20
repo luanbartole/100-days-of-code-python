@@ -104,7 +104,7 @@ if lowest_price is not None:
 
 # Allow user to add and see multiple price trackers (For future if I'm bored)
 # Make the program create a text in which it saves the products_tracker.
-# Let ther user choose if he wants to run the product_tracker of if he wants to add another product to it.
+# Let the user choose if he wants to run the product_tracker of if he wants to add another product to it.
 
 # products_tracker = {
 #     product_name: {
