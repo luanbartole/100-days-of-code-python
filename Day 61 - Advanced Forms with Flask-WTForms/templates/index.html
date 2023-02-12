@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	{{ bootstrap.load_css() }}
+	<title>Secrets</title>
+</head>
+<body>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Welcome</h1>
+		<p>Are you ready to discover my secret?</p>
+		<form action="{{ url_for('login') }}">
+    		<button class="btn btn-primary btn-lg">Login</button>
+		</form>
+	</div>
+</div>
+{{ bootstrap.load_js() }}
+</body>
+</html>
